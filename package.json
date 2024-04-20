@@ -1,0 +1,23 @@
+{
+  "name": "my-microfrontend-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "html-webpack-plugin": "^5.2.0"
+  }
+}
