@@ -7,7 +7,7 @@ function MicrofrontendInfo() {
     <Container maxWidth="lg">
       <Box my={4}>
         <Typography variant="h2" component="h1" gutterBottom>
-          Microfrontend Architecture
+          Monolith Architecture
         </Typography>
         <Typography variant="body1" gutterBottom>
           Discover how microfrontend architecture breaks up the monolithic frontend into manageable pieces,
