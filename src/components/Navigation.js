@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom'; // useHistory instead of useNavigate for v4
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     '@global': {
         ul: {
             margin: 0,
