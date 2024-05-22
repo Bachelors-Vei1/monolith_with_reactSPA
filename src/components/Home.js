@@ -10,6 +10,16 @@ import {
   Link
 } from '@material-ui/core';
 
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link to="/">Your Website</Link> {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
 function Home() {
   return (
     <Container maxWidth="lg">
@@ -96,7 +106,7 @@ function Home() {
           </Link>
         </Typography>
       </Container>
-
+      <Copyright />
     </Container>
   );
 }
