@@ -1,34 +1,40 @@
 import React from 'react';
-import {
-  Container,
-  Typography,
-  Box,
-  Grid,
-  Paper,
-  Button,
-  TextField,
-  Link
-} from '@material-ui/core';
+import {Link as ReactLink} from 'react-router-dom';
+import Typography from "@material-ui/core/Typography";
+import {Container, Paper} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import {makeStyles} from "@material-ui/core/styles";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link to="/">Your Website</Link> {new Date().getFullYear()}
+      <ReactLink to="/">Your Website</ReactLink> {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
 }
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
 
 function Home() {
+  const classes = useStyles();
+
   return (
     <Container maxWidth="lg">
       <Box my={4}>
         <Typography variant="h2" gutterBottom>
-          Understanding Microfrontends
+          Understanding micro-frontends architecture
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          Microfrontend architecture is a design approach in which a frontend app is decomposed into individual,
+          Micro-frontends architecture architecture is a design approach in which a frontend app is decomposed into individual,
           semi-independent "micro" apps working loosely together.
         </Typography>
 
@@ -37,12 +43,12 @@ function Home() {
 
         <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
           <Typography variant="h4" gutterBottom>
-            Pros of Microfrontends
+            Pros of micro-frontends architecture
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Typography variant="body2">
-                Microfrontends allow for better scalability, smaller, more cohesive codebases, and the possibility to
+                Micro-frontends architecture allow for better scalability, smaller, more cohesive codebases, and the possibility to
                 use multiple frameworks. They enable autonomous teams to develop, deploy, and scale their services
                 independently.
               </Typography>
@@ -52,7 +58,7 @@ function Home() {
 
         <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
           <Typography variant="h4" gutterBottom>
-            Cons of Microfrontends
+            Cons of micro-frontends architecture
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
@@ -63,8 +69,6 @@ function Home() {
             </Grid>
           </Grid>
         </Paper>
-        <Link></Link>
-
         <Button variant="contained" color="secondary" fullWidth={true} size="large" style={{marginTop: 20}}
                 disableElevation>
           Course
@@ -92,21 +96,17 @@ function Home() {
           </Grid>
         </Grid>
       </Paper>
-
-      <Container maxWidth="sm">
-        <Typography variant="body2" color="textSecondary" align="center" style={{padding: 16}}>
-          <Link color="inherit" href="#">
-            Terms of Service
-          </Link>
-          <Typography variant="caption">
-            •
-          </Typography>
-          <Link color="inherit" href="#">
-            Privacy Policy
-          </Link>
+      <footer className={classes.footer}>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="textSecondary"
+          component="p"
+        >
+          Nikita Hvoina
         </Typography>
-      </Container>
-      <Copyright />
+        <Copyright/>
+      </footer>
     </Container>
   );
 }

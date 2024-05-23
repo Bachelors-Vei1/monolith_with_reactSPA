@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link as ReactLink, useHistory} from 'react-router-dom';
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {Container} from "@material-ui/core";
+import {Checkbox, Container} from "@material-ui/core";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -78,6 +79,10 @@ export default function SignIn() {
               />
             </Grid>
           </Grid>
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary"/>}
+            label="Remember me!"
+          />
           <Button
             type="submit"
             fullWidth
